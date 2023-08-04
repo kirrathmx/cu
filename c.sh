@@ -1,6 +1,6 @@
 #!/bin/bash
 ip=`cat /etc/VpsPackdir/ip`;
-[[ -e /bin/ejecutar/msg ]] && source /bin/ejecutar/msg || source <(curl -sSL https://raw.githubusercontent.com/kirrathmx/check/main/msg)
+[[ -e /bin/ejecutar/msg ]] && source /bin/ejecutar/msg || source <(curl -sSL https://raw.githubusercontent.com/kirrathmx/cu/main/msg)
 #source /etc/adm-lite/cabecalho 
 #FUNCION DE SELECCION
 selection_fun () {
@@ -28,7 +28,7 @@ mportas(){
 }
 
 start(){
-[[ -e /bin/ejecutar/checkuser.py ]] || wget -q -O /bin/ejecutar/checkuser.py https://raw.githubusercontent.com/kirrathmx/check/main/chekuser.py && chmod +x /bin/ejecutar/checkuser.py
+[[ -e /bin/ejecutar/checkuser.py ]] || wget -q -O /bin/ejecutar/checkuser.py https://raw.githubusercontent.com/kirrathmx/cu/main/chekuser.py && chmod +x /bin/ejecutar/checkuser.py
 	if [[ $(systemctl is-active chekuser) = "active" ]]; then
 		title 'DESABILITANDO CHEKUSER'
 		systemctl stop chekuser &>/dev/null
@@ -112,7 +112,7 @@ start(){
     fi
 
     print_center -ama 'Instalando check'
-    if wget -O /usr/bin/check https://raw.githubusercontent.com/kirrathmx/check/main/check.sh &>/dev/null; then
+    if wget -O /usr/bin/check https://raw.githubusercontent.com/kirrathmx/cu/main/check.sh &>/dev/null; then
     	chmod +x /usr/bin/check
     	mkdir /etc/rec
     	del 1
@@ -171,7 +171,7 @@ _onli() {
 
 
    print_center -ama 'Instalando check'
-    if wget -O /usr/bin/onlineapp https://raw.githubusercontent.com/kirrathmx/check/main/onlineapp.sh &>/dev/null; then
+    if wget -O /usr/bin/onlineapp https://raw.githubusercontent.com/kirrathmx/cu/main/onlineapp.sh &>/dev/null; then
     	chmod +x /usr/bin/onlineapp
     	mkdir /etc/rec
     	del 1
